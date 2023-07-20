@@ -1,0 +1,232 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bigstrut}
+\usepackage{braket}
+\usepackage{dsfont}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{qcircuit}
+\usepackage{setspace}
+\usepackage{svg}
+\usepackage{titling}
+\usepackage{url}
+
+
+
+\usepackage{hyperref}
+
+\renewcommand{\baselinestretch}{1.25}
+
+\setlength{\droptitle}{-8em}
+
+\title{\textbf{A Journey through String Theory and Recent Developments}}
+\author{Riddhiman Bhattacharya}
+\date{July 20, 2023}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\small
+This paper explores the fascinating evolution of string theory, from its origins as a novel approach known as "bootstrap models" in relativistic particle physics to its current status as a candidate theory of quantum gravity. The bootstrap models sought self-consistent equations that described the scattering of diverse collections of an indeterminate number of particle types, aiming to predict the properties of particles through matching with experimental data. However, this approach encountered significant challenges and faced limited success.
+
+In 1968, Gabriele Veneziano successfully developed an infinite spectrum of integer-spin particles with a linear Regge trajectory using the "narrow resonance" approximation within the bootstrap model. This led to the well-known Veneziano amplitude, describing two-particle scattering. Subsequently, Miguel Virasoro proposed an alternative two-particle scattering amplitude, termed the Virasoro-Shapiro amplitude, and introduced a massless particle with helicity $h = \pm 2$ instead of $h = \pm 1$.
+
+By the early 1970s, the models proposed by Veneziano and Virasoro converged into a novel class of relativistic quantum theory known as string theory. The central concept of string theory posits that the fundamental entities possess one-dimensional extension, unlike the point-like nature of particles in Quantum Field Theory (QFT). The quantization of the energy levels of the oscillatory modes of the string gives rise to particle spectra featuring linear Regge trajectories.
+
+However, the new theory encountered significant challenges, particularly the requirement of 26 dimensions for Poincaré symmetry to be respected, leading to the consideration of compactification of extra dimensions to resolve this issue. String theory witnessed further advancements with the incorporation of fermions and the discovery of dualities between different string theories.
+
+The paper discusses the search for a physical theory that explains the scattering amplitude and particle spectrum observed in string theory and the exploration of compactifications, leading to four-dimensional theories with four supercharges. Furthermore, the paper delves into the string theory landscape, which encompasses a vast number of possible Calabi-Yau compactifications, and the concept of the swampland, comprising theories that cannot arise from string theory compactifications.
+
+\end{abstract}
+\large
+\section{Quantum Mechanics}
+
+First introduced in its modern form in 1925, quantum mechanics revolutionized the way we understand physical systems. It treats the states of a system as vectors in a vector space, in stark contrast to classical mechanics, where states are simply elements of a set. This fundamental distinction enriches the concept of a quantum "space of states" because state vectors can be combined or "superposed" to create new states. In classical mechanics, such an operation does not exist, preventing phenomena like superposition and entanglement that are characteristic of quantum mechanics from occurring classically. While the states of a classical system can be described using the positions and momenta of its constituent particles, the components of state vectors in a quantum system correspond to the probabilities of observable quantities, such as position, energy, etc., depending on the chosen "basis" used to represent them.
+
+One of the most significant consequences of this profound change is the phenomenon of \textbf{quantization}, where various measurable quantities in certain systems become discrete or quantized. Notably, energy levels and angular momenta of electrons in atoms are quantized, leading to the physics of atomic orbitals and, consequently, governing much of the structure of the periodic table. Instead of relying on Newton's laws, the behavior of quantum systems is described by the \textbf{Schrödinger equation}, which explains how a system evolves from one state to another with time. This equation is central to understanding the dynamics of quantum systems and has far-reaching implications in various areas of physics, chemistry, and technology.
+
+\section{Special Relativity}
+
+Explored as early as 1892 \cite{Lorentz_1892} and proposed as a true physical theory in 1905 \cite{Einstein_1905}, special relativity can be thought of as the consequences of two simple principles: that the laws of physics are the same in all non-accelerating frames of reference, and that it is a law of physics that the speed of light (in a vacuum) is the constant $c$. The immediate conclusion is that the speed of light is the constant $c$ in all non-accelerating frames of reference. This one fact can be used to show that the time interval and spatial distance between two ``events'' (which have a time and a place) in different reference frames are related in very particular ways - this is expressed by the so-called ``Lorentz transformations''.
+
+In particular, in reference frames moving relative to the spatial positions of two events, the measured distances and times between them will be different to those measured in the reference frame in which the positions of the events are stationary. These phenomena are called ``length contraction'' and ``time dilation''. For example, if the events correspond to a train entering and leaving a tunnel, the length of the tunnel will be shorter in reference frames moving relative to the tunnel, and the measured time between the train entering and leaving will be longer.
+
+
+Importantly, however, a certain expression involving the time interval and spatial distance has an interesting property. Expressing the time interval as $\Delta t$, and the $x$-, $y$- and $z$-direction distances as $\Delta x$, $\Delta y$ and $\Delta z$, respectively, the quantity
+
+\begin{equation}
+    c^2 {\left(\Delta t\right)}^2 - {\left(\Delta x\right)}^2 - {\left(\Delta y\right)}^2 - {\left(\Delta z\right)}^2
+\end{equation}
+
+is actually the same in all reference frames, which means that the exact same expression using the time interval and distances in another reference frame, denoted ${\left(\Delta t\right)}'$, ${\left(\Delta x\right)}'$, ${\left(\Delta y\right)}'$ and ${\left(\Delta z\right)}'$, would be equal. A simple example is the motion of a pulse of light, which in all reference frames propagates a distance in a particular time interval equal to $c$ multiplied by that time interval. In this case, the quantity above, called the ``spacetime interval'', is equal to zero. Quantities such as this, which are the same in all reference frames, are called Lorentz \textbf{scalars}.
+
+\section{Symmetry and Geometry}
+
+The existence of this invariant quantity appeared to be an interesting isolated fact until Hermann Minkowski, in 1908, pointed out the similarity of this expression to one related to Euclidean space, which led to the modern, geometric formulation of special relativity. As known from the Pythagorean theorem, the square of the distance between two points in Euclidean space is given by
+
+\begin{equation}
+    {\left(\Delta x\right)}^2 + {\left(\Delta y\right)}^2 + {\left(\Delta z\right)}^2,
+\end{equation}
+
+but if we were to rotate our coordinate system from $\left\{x, y, z\right\}$ to $\left\{x', y', z'\right\}$, the square of the distance would again be given by the exact same expression in terms of ${\left(\Delta x\right)}'$, ${\left(\Delta y\right)}'$ and ${\left(\Delta z\right)}'$. The existence of this Euclidean scalar is a manifestation of the ``rotational symmetry'' of Euclidean space (this is also a symmetry of the spacetime interval, since it is equal to the square of the time interval, which isn't affected by the rotation, minus the square of the Euclidean distance).
+\newline
+
+A particular interpretation for the Euclidean distances allows us to `discover' a new type of quantity with slightly less trivial transformation properties under rotation. If we relabel the distances as $v_x$, $v_y$ and $v_z$ and package them into a single three-component object $\left(v_x, v_y, v_z\right)$, we have a Euclidean vector $\mathbf{v}$. Unlike the Euclidean scalar, it is certainly not the case that after a rotation of coordinates, the new vector $\mathbf{v}'$ is equal to $\mathbf{v}$, as the different components of the vector will be mixed by the rotation.
+\newline
+
+Exactly the same line of reasoning is valid in the case of Minkowski spacetime: we can interpret the time interval and distances as the four components of a Lorentz \textbf{four-vector}, $\left(v_t, v_x, v_y, v_z\right)$. Similarly, rotations will mix the spatial components of the four-vector, while transformations between reference frames will mix the temporal component and spatial components. For both the Euclidean and Minkowski vectors, the only case in which a vector remains the same under a transformation is if it is equal to the ``zero vector'' (all of its components are zero).
+\newline
+
+The transformations of Lorentz scalars and four-vectors are usually written as a multiplicative operator $\Lambda$: they are identically equal to $1$ for scalars (since the scalars are the same under all transformations) and are equal to $4 \times 4$ generalisations of rotation matrices for four-vectors (they include the Euclidean rotations as well as the transformations between relatively moving reference frames).
+\newline
+
+Minkowski realised that the validity of the notions of invariant spacetime `distances' as well as vectors implied that spacetime itself has an associated geometry with particular ``symmetries'' - operations with respect to which the spacetime interval is invariant. Euclidean space has six independent symmetries, corresponding to the three perpendicular directions of spatial translation and the three perpendicular axes of rotation. Minkowski spacetime has an additional four symmetries, corresponding to temporal translation and the three perpendicular directions in which reference frames can be moving with respect to one another (transformations between these relatively moving reference frames are called ``Lorentz boosts'').
+\newline
+
+The relationships between these ten symmetries of Minkowski spacetime form the mathematical structure called the \textbf{Poincaré group}. A ``group'' is simply a closed algebraic structure which is equipped with a multiplication operator; any two elements of the group can be multiplied together to form another element of the group. This means that all compositions of temporal translations, spatial translations, rotations and boosts are related by multiplication.
+
+\section{Poincaré Group Representations}
+
+The properties of the Poincaré group which are of most relevance to the foundation of string theory are those analysed using ``representation theory'', which is the study of how the elements of abstract algebraic structures, particularly groups, can be represented by matrices. The key idea is the following: all mathematical quantities in a relativistic theory must transform under the operations of the Poincaré group (otherwise they can not respect the spacetime symmetries), and so the possible representations of its elements determine the possible forms the mathematical quantities of the theory can take (for technical reasons, we can use ``projective'' representations in the context of quantum mechanics, but we will ignore this detail).
+\newline
+
+The Poincaré group has a characteristic that is important to the study of its representations: it is a ``non-compact group''. This ultimately means that the ``finite'' representations of the group (that is, the matrix representations of the group elements) are not \textbf{unitary}, which means that not all matrices making up the representation are unitary. We will return to the infinite-dimensional unitary representations shortly when bringing in quantum mechanics.
+\newline
+
+The finite, non-unitary representations of the Poincaré group, explored throughout the early part of the twentieth century, turn out to be composed of a trivial part, involving the spatial and temporal translations, and a non-trivial part, involving the rotations and boosts. The sub-group consisting of just the six rotations and boosts is called the \textbf{Lorentz group}. The finite representations of the Lorentz group can be labelled by two positive half-integers, $\left(m,n\right)$, and the dimensionality (number of rows or columns) of the matrices making up each representation is equal to $\left(2m+1\right)\left(2n+1\right)$. We have already mentioned the scalar and four-vector representations, corresponding to $\left(0,0\right)$ and $\left(\tfrac{1}{2},\tfrac{1}{2}\right)$, respectively, and you can easily check that their dimensionalities are $1$ and $4$ as expected.
+\newline
+
+The other representations that see the most use in modern physics are the left-chiral and right-chiral \textbf{spinor} representations $\left(\tfrac{1}{2},0\right)$ and $\left(0,\tfrac{1}{2}\right)$, the self-dual and anti-self-dual $\mathbf{2}$\textbf{-form} representations $\left(1,0\right)$ and $\left(0,1\right)$, and the \textbf{traceless symmetric tensor} representation $\left(1,1\right)$. The quantities that transform under these various representations (scalars, spinors, four-vectors, $2$-forms, traceless symmetric tensors, etc.) make up all classical relativistic formulae and equations.
+\newline
+
+We now come back to the infinite-dimensional unitary representations of the Poincaré group, which are or particular importance when combining relativity with quantum mechanics. Consider the quantum state of a single particle. This particle will have various properties, two of the most important of which are its mass and momentum. By the arguments made above, the mass and momentum must transform under finite representations of the Poincaré group, or at least make up some of the components of quantities that do. Since the mass of a particle is the same constant $m$ in all reference frames, it is a scalar. The momentum, on the other hand, makes up the three spatial components of the ``four-momentum'', which is a four-vector (the temporal component of the four-momentum is the energy).
+\newline
+
+In general, the quantum state of the particle can be a superposition over all possible momenta. Importantly, the sum of the probabilities of measuring the momentum to be any particular value must be equal to $1$ (we must measure something, whatever it is), and the transformations of this state under the Poincaré group elements must preserve this fact. This requirement of the preservation of probability is precisely the requirement that the representation under which the state transforms is unitary. The infinite-dimensional character of the representation is encoded in the infinite continuum of possible momenta the particle can have.
+
+\section{Wigner's Classification}
+
+During the 1930s and 1940s, physicists faced the crucial task of tabulating unitary representations, just as they had previously done with finite representations. Eugene Wigner and Valentine Bargmann introduced the "little group method," a significant part of what is now known as "Wigner's classification," to tackle this challenge. The approach involved inducing the unitary representations of the Poincaré group from the finite representations of its largest subgroup, known as the "little group," which is the subgroup under which the four-momentum of a particle remains fixed. This method allowed physicists to systematically organize and categorize the unitary representations of the Poincaré group, contributing to a better understanding of particle physics.
+
+To gain insight into the seemingly complex process of classifying unitary representations, we can examine explicit examples. Particles with non-zero mass move at velocities slower than light, and their momentum varies with the reference frame. Hence, there exists a reference frame where the particle is at rest, and all the spatial components of its four-momentum are zero. As rotations only affect the spatial components, the four-momentum remains invariant under such transformations.
+
+The most extensive subgroup possible, then, is the group of 3D rotations. Consequently, for particles with non-zero mass, the little group is the group of 3D rotations. The representations of this group are labeled by a single positive half-integer, known as the \textbf{spin}, and have a dimensionality of $2s+1$. This spin quantum number characterizes the particle's intrinsic angular momentum and determines the behavior of its states under rotations.
+
+
+For massless particles, which travel at the speed of light in all reference frames, there is no reference frame in which the particle can be at rest. As a result, the largest subgroup is the group of 2D rotations around the axis aligned with the particle's momentum direction. This little group is smaller compared to that of massive particles, and all its representations have a dimensionality of $1$.
+
+These representations are labeled by a single half-integer, denoted as $h$, which can be positive, negative, or zero, and is known as the \textbf{helicity}. Particles with positive helicity are termed "right-handed," while those with negative helicity are called "left-handed." The helicity characterizes the particle's intrinsic angular momentum along its momentum direction and plays a crucial role in understanding the behavior of massless particles.
+\\
+
+Indeed, the spins of massive particles and the helicities of massless particles share several similar physical implications, particularly in characterizing their intrinsic angular momenta. Due to these similarities, both are commonly referred to as `spin.' Particles with integer spin are categorized as \textbf{bosons}, while particles with half-integer spin are classified as \textbf{fermions}. This nomenclature is used to distinguish between the two fundamental classes of particles based on their spin properties.
+
+\section{Quantum Fields}
+
+The process of reconciling the classical equations of relativity with quantum states of particles involves two main tasks. Firstly, it addresses the encoding of infinite momentum states of particles through "second quantization" in Quantum Field Theory (QFT) \cite{weinberg1995quantum}. Secondly, it determines which quantum fields can create particles with specific spins and helicities by embedding little group representations into finite representations of the Poincaré group \cite{ryder1996quantum}.
+
+In classical field theory, the \textbf{fields} are quantities that transform under finite representations. For instance, in classical electromagnetism, the electric and magnetic fields constitute components of a combination of two $2$-forms. However, when dealing with quantum states of particles, these fields are upgraded to \textbf{quantum fields} using second quantization, where operators create and annihilate particles with different momenta, preserving relativistic symmetry.
+
+The embedding of specific spins and helicities is determined by finding which finite representations of the Poincaré group can accommodate the little group representations. Massive particles with $s=1$, like the W and Z bosons, can be described by four-vector fields, which are based on the four-vector representation of the $4 \times 4$ rotation and boost matrices. However, additional constraints are needed to relate the four components of the four-vector field, reducing the independent components to three.
+
+For massless particles, the situation is more constrained. The finite Poincaré representations $\left(m,n\right)$ embedding the little group representation with helicity $h$ must satisfy the condition $h = n - m$. For example, photons with helicity $h = \pm 1$ cannot be described by four-vector fields since $n - m = 0$. Instead, the smallest representation that accommodates both helicities is a combination of the $2$-form representations: $\left(0,1\right)$ for $h=1$ and $\left(1,0\right)$ for $h=-1$. This compound representation has dimensionality $3+3=6$ for a little group representation of dimensionality $1+1=2$. The equations ensuring that only two of the components are independent are Maxwell's equations of electromagnetism. Additionally, electromagnetism exhibits a special property known as \textbf{gauge symmetry}, which allows the description of the photon using a "four-potential" that can be packaged into a four-vector for technical reasons (as a combination of derivatives of this potential recovers the $2$-forms)
+\section{The Standard Model}
+
+The confluence of quantum mechanics and special relativity finds significant support in the alignment of known elementary particles and their interactions with Wigner's classification and second quantization \cite{wigner1939}. For instance, particles like quarks and leptons are described as spinors with a spin value of $s=\tfrac{1}{2}$, while photons and gluons are represented as $2$-forms with helicity $h = \pm 1$. The W and Z bosons, being carriers of the weak nuclear force, are four-vectors with $s=1$, while the Higgs boson, responsible for giving mass to other particles, is a scalar with $s=0$.
+
+This comprehensive description of elementary particles and their interactions is encapsulated within the framework of the \textbf{Standard Model} of particle physics, which unifies "electroweak theory" (describing electromagnetism and the weak nuclear force) and "quantum chromodynamics" (describing the strong nuclear force). However, one crucial aspect is missing from the Standard Model – the gravitational force, which is one of the four fundamental forces of nature. Integrating gravity into the framework has proven challenging. When attempting to apply Quantum Field Theory (QFT) to describe gravity, the resulting model becomes \textbf{non-renormalizable}, leading to issues such as loss of predictive power and probabilities exceeding $1$ \cite{weinberg1979ultraviolet}. The hypothetical massless particles associated with the gravitational field, known as \textbf{gravitons}, are expected to have helicity $h = \pm 2$, similar to the photon. Gravity also exhibits a form of gauge symmetry, allowing the use of a traceless symmetric tensor as a gravitational potential.
+
+For the past five decades, a primary goal in fundamental physics has been to find a consistent quantum theory of gravity that reconciles both the Standard Model and the classical theory of gravitation, \textbf{general relativity} (\textbf{GR}). The most promising candidate to date, however, had no initial connection to gravity whatsoever.
+
+\section{The Bootstrap}
+
+During the 1950s, it became evident that there were four fundamental forces known: electromagnetism, gravity, the weak nuclear force, and the strong nuclear force. At that time, only electromagnetism had been successfully formulated as a \textbf{Quantum Field Theory} (QFT), referred to as "\textbf{quantum electrodynamics}." However, the other three forces posed challenges for finding suitable QFT formulations. Gravity suffered from non-renormalizability, the weak force had various issues, including a lack of a mechanism for giving mass to the W and Z bosons, and the strong force appeared to involve numerous elementary particles, making a QFT approach impractical.
+\newline
+
+During the 1960s and 1970s, the challenges associated with the weak force were successfully addressed, leading to the development of electroweak theory, which unified electromagnetism and the weak force. The mechanism responsible for imparting mass to the W and Z bosons is known as the "\textbf{Higgs mechanism}," which involves the Higgs field. The particle associated with this field, called the Higgs boson, was finally discovered in the year 2012.
+.
+\newline
+
+The strong force's nature remained elusive, prompting many physicists to explore alternative approaches to relativistic particle physics, known as "\textbf{bootstrap models}." In this novel approach, the main idea was to seek self-consistent equations that described the scattering of diverse collections of an indeterminate number of particle types. By matching these equations to experimental data, physicists aimed to predict the properties of particles, which could then be compared to other experimental results. The ultimate goal was to determine the "\textbf{scattering amplitudes}" of the model, directly linked to the probabilities of particles scattering in various directions.
+\newline
+
+Bootstrap models sought to recover a specific characteristic of strongly interacting particles: the existence of linear "\textbf{Regge trajectories}." Experimentally, these trajectories showed a linear relationship between the spins and masses of strongly interacting fermions, known as "baryons," and between the spins and the squares of masses for strongly interacting bosons, called "mesons."
+
+Despite its ambitious goals, the bootstrap scheme generally faced limited success. It necessitated multiple combinations of approximations to be well-defined and involved highly complex equations that were challenging to analyze. As a result, the approach encountered significant difficulties in achieving its objectives.
+\\
+In 1968, using the "\textbf{narrow resonance}" approximation, Gabriele Veneziano successfully developed a bootstrap model that involved an infinite spectrum of integer-spin particles with a linear Regge trajectory. The self-consistency equations led to the well-known \textbf{Veneziano amplitude}, which describes the scattering of two particles. Despite its elegance, the model had several shortcomings: the particle spectrum lacked baryons, the predicted Regge trajectory didn't align with any experimentally known trajectories, one of the particles had a massless state with helicity $h = \pm 1$, and the square of the mass for the particle with spin $s=0$ was negative, classifying it as a \textbf{tachyon}.\\
+
+
+
+A tachyon's presence in a relativistic quantum theory signifies an instability. Some tachyonic instabilities, like the one involved in the mentioned Higgs mechanism, lead to the spontaneous production of a finite number of particles in each region of space before the instability dissipates. This phenomenon is referred to as "\textbf{tachyon condensation}" and exemplifies a "\textbf{phase transition}," causing significant changes in the model's characteristics, particularly in the properties and interactions of particles. On the other hand, certain tachyonic instabilities can render a model unusable, as they result in the continuous and endless production of particles at all points in space. The precise nature of the tachyonic instability in the Veneziano model remained unclear at that time.
+
+\section{Hadronic Strings}
+
+Notwithstanding these concerns, numerous proficient theoretical physicists promptly embarked on a quest for a physical theory that could explain the scattering amplitude and particle spectrum observed in this particular manifestation of the bootstrap scheme. Meanwhile, Miguel Virasoro stumbled upon another bootstrap model akin to Veneziano's, but featuring an alternative two-particle scattering amplitude, now recognized as the \textbf{Virasoro-Shapiro amplitude}, and a massless particle with helicity $h = \pm 2$ instead of $h = \pm 1$.\\
+By the early 1970s, the models proposed by Veneziano and Virasoro were recognized as constituting a novel class of relativistic quantum theory known as \textbf{string theory} \cite{Veneziano1968, Virasoro1970}. The fundamental concept of string theory is that the basic entities possess one-dimensional extension, in contrast to the point-like nature of particles in Quantum Field Theory (QFT). The particle spectra exhibiting linear Regge trajectories emerge from the quantization of the energy levels of the oscillatory modes of the string. These excitations are described by the \textbf{Polyakov action} as a Quantum Field Theory of scalars on the \textbf{worldsheet} of the string, which is a two-dimensional surface traced out by the string as it evolves through spacetime. The Veneziano and Virasoro models correspond to strings with open ends and closed loops, respectively, and the investigation of both open and closed strings is collectively referred to as \textbf{bosonic string theory}.
+\newline
+The new theory faced significant challenges, with the most crucial being that the string's excitations did not respect Poincaré symmetry unless the spatial dimensionality was not the familiar $3$ but rather $25$, resulting in a $26$-dimensional spacetime. To address this, a plausible solution was considered: the other $22$ dimensions could possess a "compact" topology, meaning they are finite in extent and so tiny in scale that their existence had not been detectable by any experiments yet. By starting with the $26$-dimensional framework and using a mathematical process known as \textbf{compactification}, a $4$-dimensional theory emerged, in which the physics of the other $22$ dimensions is not directly observable, but their influence is indirectly manifested and measurable in the observed physics. Initially seen as a potential weakness, this requirement of compactification eventually revealed itself to be highly advantageous for the theory.\\
+In 1971, during the development of string theory, André Neveu and John Schwarz sought a solution to eliminate the potentially problematic tachyon from the particle spectrum. Simultaneously, Pierre Ramond attempted to incorporate fermions into the models proposed by Veneziano and Virasoro. Surprisingly, both challenges were addressed with the same resolution: an extension of the Polyakov action that introduced spinor fields on the string worldsheet. The oscillatory modes of these spinor fields gave rise to fermions, while a new symmetry arising from this extension, known as \textbf{supersymmetry}, provided a means to prevent the occurrence of the tachyon. The augmented version of the original bosonic theory, now referred to as \textbf{superstring theory}, required a spacetime dimensionality of $10$ instead of $26$, which in turn meant only $6$ compact dimensions rather than the initial $22$.\\
+While all of these advancements were taking place, other physicists were coming to the realization that the strong force could be elegantly described by a Quantum Field Theory (QFT) with a structure somewhat similar to quantum electrodynamics. Murray Gell-Mann played a crucial role in many key developments that led to this breakthrough, especially his proposal of the existence of quarks. According to this model, the numerous strongly interacting particles known at the time were not elementary particles themselves but rather composed of different combinations of quarks. However, quarks had not been directly detected in experiments due to a quantum phenomenon called "\textbf{colour confinement}."
+
+As time passed, this newly proposed model, known as quantum chromodynamics, demonstrated its ability to predict nearly all known properties of the strong force. Consequently, the significance of string theory became increasingly uncertain, as quantum chromodynamics was successfully explaining the behavior of the strong force and its interactions.
+
+
+\section{Quantum Gravity}
+
+In 1974, Joël Scherk and John Schwarz completely transformed the interpretation of superstring theory. They suggested that it was not a model of strongly interacting particles, but rather a model of all elementary particles. The excitations of the closed string corresponding to massless particles with helicity $h = \pm 2$ could then be interpreted as gravitons, in a new, non-QFT context with no issue of non-renormalisability. They were also able to show that the equations describing the graviton were Einstein's field equations of general relativity, and that there existed a correspondence between backgrounds of superpositions of the graviton string excitations and the physics of curved, gravitating spacetime geometries. Superstring theory became the first candidate for a theory of quantum gravity.
+\newline
+
+In order for this interpretation to make sense, all known particles are assumed to correspond to the `explicitly' massless oscillatory modes of the superstring, since the masses of the known particles certainly don't lie on a linear Regge trajectory and are much smaller than the energy scale at which quantum gravity is believed to have highly non-classical behaviour. Their non-zero masses would then come from some other physics, such as the geometry of the compactified extra dimensions or the effect of a phase transition as mentioned previously. The explicitly non-zero mass excitations of the superstring are assumed to be so massive that they are not observable in experiments. Scherk and Schwarz realised that there was a possibility that the compact extra dimensions, if given a particular topology and geometry, might be able to reproduce a theory compatible with the Standard Model in the non-compact $4$-dimensional spacetime.
+\newline
+
+By the end of the 1980s, it was understood that there were five self-contained, self-consistent superstring theories: \textbf{type I}, \textbf{type IIA}, \textbf{type IIB}, \textbf{heterotic} $\mathbf{SO(32)}$ and \textbf{heterotic} $\mathbf{E_8 \times E_8}$. The type I theory contains both open and closed strings, while the others contain only closed strings. Over time, it became apparent that the type IIA and IIB theories are related by a mathematical duality connecting the physics of their compactifications, as are the type I and heterotic theories. Furthermore, it was discovered in the 1990s that the type IIA and heterotic $E_8 \times E_8$ theories are themselves the compactifications of an $11$-dimensional theory called \textbf{M-theory}, the properties of which are still not well understood.
+\newline
+
+The supersymmetry of these superstring theories manifests as an extension of the spacetime symmetries from the Poincaré group to the \textbf{super-Poincaré group}. In $4$ spacetime dimensions, the ten symmetries of translations, rotations and boosts are accompanied by four, eight, twelve or sixteen ``supercharges''. In $10$ spacetime dimensions, there are fifty-five Poincaré symmetries (ten translations, nine boosts and thirty-six rotations), accompanied by sixteen or thirty-two supercharges - the type II theories have thirty-two, while the others have sixteen.
+
+\section{Compactifications}
+
+During the 1930s and 1940s, physicists faced a significant challenge in understanding the unitary representations of the Poincaré group, especially in the context of particles' quantum behavior. Eugene Wigner and Valentine Bargmann introduced the "little group method" as part of "Wigner's classification" to address this issue \cite{wigner1939unitary, Bargmann1947}. By using the little group, which is the subgroup that keeps a particle's four-momentum fixed, they induced unitary representations of the Poincaré group from finite representations of the little group. This method allowed them to systematically organize and categorize the unitary representations, contributing to a better understanding of particle physics.
+
+The early study of bosonic string theory revealed certain issues, like the existence of tachyons and the absence of fermions. To overcome these limitations, physicists turned their attention to compactifications of superstring theories, where each theory had its own unique spectrum of massless particles. For instance, the heterotic $E_8 \times E_8$ theory's massless spectrum included various particles, such as scalars, spinors, vectors, a 2-form, gravitino, and graviton. Compactifications were necessary to reduce the higher-dimensional representations of these massless particles to four-dimensional Lorentz representations corresponding to known particles in our universe.
+
+The compactification process introduced additional challenges, as it involved breaking and rearranging supersymmetries, modifying particle interactions, and accounting for particle masses. The focus on heterotic $E_8 \times E_8$ theory was motivated by some general results indicating that having either zero or four remaining supersymmetries after compactification could be compatible with the Standard Model. The preference for four remaining supersymmetries was driven by its potential to address theoretical questions, such as the "hierarchy problem." However, the lack of experimental evidence for supersymmetry has led to some skepticism regarding this preference.
+
+An important breakthrough came with the discovery of dualities between heterotic $E_8 \times E_8$ theory compactified on a 4-dimensional torus and type IIA superstring theory partially compactified on another 4-dimensional "manifold" called $K3$. These dualities matched the number of supersymmetries in both theories, making them equivalent in certain contexts \cite{Candelas1991}.
+
+Further investigations into partial compactifications of heterotic $E_8 \times E_8$ theory on $K3$ revealed another duality, this time between heterotic $E_8 \times E_8$ compactified on a 2-dimensional torus followed by $K3$, and type IIA superstring theory compactified on another 6-dimensional manifold. This duality required breaking a specific fraction of the supersymmetries in both theories, which led to the concept of "Calabi-Yau 3-folds" as the relevant manifolds \cite{Vafa1996}.
+
+Eventually, compactifications of heterotic $E_8 \times E_8$ theory on Calabi-Yau 3-folds were found to partially break supersymmetry and yield a four-dimensional theory with four supercharges. Notably, the gauge group $SU(3) \times SU(2) \times U(1)$ of the Standard Model interactions was embedded in the $E_8 \times E_8$ gauge group. This made it possible to partially break the string theory's symmetry to match the Standard Model.
+
+Further advancements revealed that compactifications of 12-dimensional "F-theory" on 8-dimensional "Calabi-Yau 4-folds" could generate the Standard Model gauge group and particles transforming under its representations, as well as the Poincaré group \cite{Candelas1992, Witten1995}.
+
+\section{The Landscape and The Swampland}
+
+As of the current state of research, there exists a recipe using F-theory to retain a suitable number of supercharges and reproduce the gauge group of the Standard Model. Notably, explicit constructions of up to $10^{15}$ F-theory compactifications have been achieved, which can reproduce the minimally supersymmetric extension of the Standard Model \cite{vafa2005string}.
+
+However, several essential details of the Standard Model still pose open questions. These include the particle masses, strengths of interactions, spontaneous breaking of supersymmetry, and the value of the "cosmological constant." The vast number of possible choices for Calabi-Yau compactifications is estimated to be on the order of $10^{500}$ or even more when considering F-theory, leading to what is known as the "string theory landscape" \cite{vafa2005string}.
+
+Parallel to the study of the string theory landscape, physicists have explored the concept of the "swampland," which comprises theories that cannot arise from compactifications of string theory. Cumrun Vafa has suggested that the swampland may be much larger than the string theory landscape. It is believed that the precise form of the Standard Model might be in the swampland, while certain extensions of the Standard Model could potentially be in the landscape instead. However, the possibility remains that some extensions may not be achievable through any string theory compactification, contributing to the ongoing controversy surrounding string theory \cite{denef2007geometry}.
+
+
+
+
+
+In conclusion, string theory was built from a natural progression of ideas, but its story is far from over. Although elegant in its inception, trying to find its connection to the real world has been rather more ungainly.
+
+
+\newpage
+
+\bibliographystyle{plain}
+\bibliography{references} 
+
+
+
+\end{document}
